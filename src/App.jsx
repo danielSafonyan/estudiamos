@@ -79,7 +79,7 @@ function App() {
                   style={inputWordStyle}
                   maxLength={word.length}
                   onChange={handleInput}
-                /><span className="word-definition">{wordDefinition}</span>
+                /> <span className="word-definition">{wordDefinition}</span>
                 <div className="btn-container">
                   <button type='button' className='btn' onClick={showPrevWord}>Atrás</button>
                   <button type='button' className='btn' onClick={toggleIsWordShown}><i className="fa-solid fa-poo"></i></button>
