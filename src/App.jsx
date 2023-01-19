@@ -13,7 +13,6 @@ function App() {
 
   const [isWordShown, setIsWordShown] = React.useState(false)
   function toggleIsWordShown() {
-    console.log("I don't know the word.")
     setIsWordShown(prev => !prev)
   }
 
@@ -24,8 +23,6 @@ function App() {
 
   const SPANISH_ACCENTS = 'áéíóúüñ'
   const hasWordSpanishAccent = !!word.match(new RegExp(`[${SPANISH_ACCENTS}]`))
-
-  console.log("hasWordSpanishAccent", hasWordSpanishAccent)
 
   function checkInputWord(word, wordInput) {
     word = word.toLowerCase()
@@ -46,14 +43,11 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log("word", word)
-    console.log("wordInput", wordInput)
-    console.log("wordNumber", wordNumber)
     const wordsMatch = word.toLowerCase() === wordInput.toLowerCase()
     if (wordsMatch && wordNumber < 10) {
-      console.log("Going to the new word!")
       setWordNumber(prev => prev + 1)
       setWordInput('')
+      setIsWordShown(false)
     }
   }
 
@@ -71,7 +65,7 @@ function App() {
             </header>
             <main className="main">
               <form className="form" onSubmit={handleSubmit}>
-                <p className="word-hint">{ hasWordSpanishAccent ? 'Presta la atención a los acentos' : ''}</p>
+                {hasWordSpanishAccent && <p className="word-hint">{'Presta la atención a los acentos'}</p>}
                 <p className="word-hint">{ isWordShown ? word : ''}</p>
                 <input
                   value={wordInput}

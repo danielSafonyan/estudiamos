@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .app-container {
@@ -34,6 +35,7 @@ body {
 }
 
 .word-hint {
+  margin: 0.5em;
   font-size: inherit;
   min-height: 2rem;
   text-align: center;
@@ -44,7 +46,7 @@ body {
   font-size: inherit;
   font-weight: bold;
   border: none;
-  border-bottom: 2px dashed;
+  border-bottom: 2px solid;
 }
 
 .btn-container {
