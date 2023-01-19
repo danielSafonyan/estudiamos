@@ -46,7 +46,11 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (word === wordInput && wordNumber < 10) {
+    console.log("word", word)
+    console.log("wordInput", wordInput)
+    console.log("wordNumber", wordNumber)
+    const wordsMatch = word.toLowerCase() === wordInput.toLowerCase()
+    if (wordsMatch && wordNumber < 10) {
       console.log("Going to the new word!")
       setWordNumber(prev => prev + 1)
       setWordInput('')
