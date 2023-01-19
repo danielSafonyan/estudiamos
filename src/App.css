@@ -15,6 +15,9 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+
+  max-width: 80ch;
+  margin: auto;
 }
 
 .header {

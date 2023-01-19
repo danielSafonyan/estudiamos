@@ -1,7 +1,14 @@
 import './App.css'
 import React from 'react'
+import wordData from './assets/wordData'
 
 function App() {
+
+  // const SPANISH_ACCENTS = 'áéíóúüñ'
+  // const hasWordSpapnishAccent = 
+
+  const [wordNumber, setWordNumber] = React.useState(0)
+
   const [wordInput, setWordInput] = React.useState('')
   function handleInput(event) {
     setWordInput(event.target.value)
@@ -13,13 +20,14 @@ function App() {
     setIsWordShown(prev => !prev)
   }
 
-  const word = "La medianoche"
-  const wordDefinition = `se refiere a la hora exacta de 12:00 de la noche, o sea, el momento en el cual el día cambia a la noche. También puede ser usado para referirse al periodo de tiempo que va desde las 11:00 PM hasta las 1:00 AM.`
+  // const word = "La medianoche"
+  // const wordDefinition = `se refiere a la hora exacta de 12:00 de la noche, o sea, el momento en el cual el día cambia a la noche. También puede ser usado para referirse al periodo de tiempo que va desde las 11:00 PM hasta las 1:00 AM.`
+
+  const { name: word, definition: wordDefinition } = wordData[wordNumber]
 
   function checkInputWord(word, wordInput) {
     word = word.toLowerCase()
     wordInput = wordInput.toLowerCase()
-    // if (word === wordInput) return '#138A36'
     if (word === wordInput) return '#1ACC29'
 
     const len = wordInput.length
@@ -36,8 +44,16 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (word === wordInput) {
+    if (word === wordInput && wordNumber < 10) {
       console.log("Going to the new word!")
+      setWordNumber(prev => prev + 1)
+      setWordInput('')
+    }
+  }
+
+  function showPrevWord() {
+    if (wordNumber > 0) {
+      setWordNumber(prev => prev - 1)
     }
   }
   
@@ -45,7 +61,7 @@ function App() {
           <div className='app-container'>
             <header className="header">
               <i className="fa-solid fa-arrow-left"></i>
-              <div>1/10</div>  
+              <div>{wordNumber + 1}/10</div>  
             </header>
             <main className="main">
               <form className="form" onSubmit={handleSubmit}>
@@ -58,7 +74,7 @@ function App() {
                   onChange={handleInput}
                 /><span className="word-definition">{wordDefinition}</span>
                 <div className="btn-container">
-                  <button type='submit' className='btn'>Comprobar</button>
+                  <button type='button' className='btn' onClick={showPrevWord}>Atrás</button>
                   <button type='button' className='btn' onClick={toggleIsWordShown}><i className="fa-solid fa-poo"></i></button>
                 </div>
               </form>
