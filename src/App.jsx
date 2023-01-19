@@ -4,9 +4,6 @@ import wordData from './assets/wordData'
 
 function App() {
 
-  // const SPANISH_ACCENTS = 'áéíóúüñ'
-  // const hasWordSpapnishAccent = 
-
   const [wordNumber, setWordNumber] = React.useState(0)
 
   const [wordInput, setWordInput] = React.useState('')
