@@ -1,10 +1,10 @@
 export default [
   {
-    "name": "Espectroscopio",
+    "name": "Coche",
     "definition": "Instrumento científico que se utiliza para analizar la luz emitida o reflejada por un objeto, mediante la descomposición de la luz en un espectro de diferentes longitudes de onda. Esto permite estudiar las características y composición de los objetos, como el estudio de las estrellas, planetas y moléculas."
   },
   {
-    "name": "Telescopio",
+    "name": "Manómetro",
     "definition": "Instrumento óptico que se utiliza para ampliar y recoger la luz de los objetos distantes para su observación y estudio. Los telescopios pueden ser de diferentes tipos, como refractores, reflectores y telescopios espaciales, y se utilizan en una variedad de campos científicos, como la astronomía, astrofísica y la investigación espacial."
   },
   {

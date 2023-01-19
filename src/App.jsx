@@ -22,6 +22,11 @@ function App() {
 
   const { name: word, definition: wordDefinition } = wordData[wordNumber]
 
+  const SPANISH_ACCENTS = 'áéíóúüñ'
+  const hasWordSpanishAccent = !!word.match(new RegExp(`[${SPANISH_ACCENTS}]`))
+
+  console.log("hasWordSpanishAccent", hasWordSpanishAccent)
+
   function checkInputWord(word, wordInput) {
     word = word.toLowerCase()
     wordInput = wordInput.toLowerCase()
@@ -62,6 +67,7 @@ function App() {
             </header>
             <main className="main">
               <form className="form" onSubmit={handleSubmit}>
+                <p className="word-hint">{ hasWordSpanishAccent ? 'Presta la atención a los acentos' : ''}</p>
                 <p className="word-hint">{ isWordShown ? word : ''}</p>
                 <input
                   value={wordInput}
