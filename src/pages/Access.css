@@ -73,7 +73,7 @@
 .main-content>h2 {}
 
 .access-form {
-    width: 60%;
+    width: 90%;
 }
 
 form>input,
@@ -122,6 +122,10 @@ form>button {
 @media screen and (min-width: 576px) {
     .access-main {
         flex-direction: row;
+    }
+
+    .access-form {
+        width: 60%;
     }
 
     .intro {
