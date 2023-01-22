@@ -21,14 +21,6 @@ body {
   margin: auto;
 }
 
-.header {
-  width: 100%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-}
-
 .main {
   margin: auto;
   font-size: 1.5rem;
