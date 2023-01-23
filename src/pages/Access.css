@@ -1,4 +1,4 @@
-.access-main {
+.access-container {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -6,24 +6,13 @@
     font-family: 'Inter', sans-serif;
 }
 
-.intro {
+.access-banner {
     text-align: center;
     background-color: rgb(200, 10, 30);
     flex: 1 0 250px;
 }
 
-.main-content {
-    padding: 0 20px;
-    flex: 1;
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.intro-container {
+.access-banner-container {
     width: fit-content;
     height: 100%;
     margin: auto;
@@ -35,44 +24,48 @@
     padding: 0 20px;
 }
 
-.intro-container * {
+.access-banner-container * {
     margin: 0;
 }
-
-.top-text,
-.bottom-text {
+.access-banner-top-text,
+.access-banner-bottom-text {
     font-size: 1rem;
 }
 
-.top-text {
+.access-banner-top-text {
     order: -1;
     border-top: 2px solid;
 }
 
-.bottom-text {
+.access-banner-bottom-text {
     order: 1;
     border-bottom: 2px solid;
 }
 
-.main-title {
+.access-banner-main-title {
     font-size: 2.5rem;
-
     color: rgb(200, 10, 30);
 }
 
-.create-title {
-    margin-top: 0;
-    font-size: 1.5rem;
-
-}
-
-.main-text {
+.access-banner-main-text {
     font-size: 1.3rem;
 }
 
-.main-content>h2 {}
+.access-main {
+    padding: 0 20px;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.access-form {
+.access-main-text {
+    font-size: 1.5rem;
+}
+
+.access-main-form {
     width: 90%;
 }
 
@@ -88,39 +81,17 @@ form>button {
     outline: none;
 }
 
-form>input::placeholder {}
-
 form>input:focus {
     border: 1px solid rgb(255, 197, 39);
 }
 
 form>button {
     margin-top: 1em;
-
-}
-
-.inactive {
-    opacity: 0.5;
-}
-
-.active {
-    opacity: 1;
-    color: rgb(200, 10, 30);
-    background-color: rgb(255, 197, 39);
-    border: none;
-}
-
-.correct-input,
-.correct-input:focus {
-    border: 1px solid green;
-}
-
-.error {
-    padding: 1em 0.5em;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 576px) {
-    .access-main {
+    .access-container {
         flex-direction: row;
     }
 
@@ -128,11 +99,11 @@ form>button {
         width: 60%;
     }
 
-    .intro {
+    .access-banner {
         padding: 0 20px;
     }
 
-    .intro,
+    .access-banner,
     .main-content {
         flex: 1;
     }
@@ -178,7 +149,6 @@ form>button {
     }
 
     input[type=checkbox] {
-        /* transform: scale(1.5); */
         width: 1.5vw;
         height: 1.5vw;
     }
