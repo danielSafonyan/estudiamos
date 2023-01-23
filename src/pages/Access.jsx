@@ -21,8 +21,8 @@ export default function Access() {
             </div>
             <main className="access-main">
                 <p className="access-main-text">Don't know a word? Translate it with Estudiamos and we will make it stick using the <a href="https://en.wikipedia.org/wiki/Forgetting_curve">forgetting curve</a>.</p>
-               {/* <AccessSignUp /> */}
-               <AccessSignIn />
+               <AccessSignUp />
+               {/* <AccessSignIn /> */}
             </main>
         </div>
         )
